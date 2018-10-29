@@ -1,0 +1,26 @@
+
+<div>
+  <form>
+    <div>
+      Titulo:<input type="text" [(ngModel)]="livro.titulo" name="titulo">
+    </div>
+    <div>
+      Data de Publicação<input type="text" [(ngModel)]="livro.data" name="data">
+      <p class="card-text"><small class="text-muted">Exemplo: dd/mm/yyyy</small></p>
+    </div>
+    <div>
+      Selecione o Autor:
+    <select [(ngModel)]="ida" name="ida" class="custom-select custom-select-sm" *ngFor="let autor of autores">
+        <option value="{{autor.id}}">{{autor.nome}}</option>
+    </select>
+    </div>    
+    <div>
+      Selecione a Categoria:
+    <select [(ngModel)]="idc" name="idc" class="custom-select custom-select-sm" *ngFor="let categoria of categorias">
+        <option value="{{categoria.id}}">{{categoria.descricao}}</option>
+    </select>
+    </div>    
+
+    <button type="submit" (click)="salvar()">Inserir</button>
+  </form>
+</div>
