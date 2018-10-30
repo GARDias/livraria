@@ -5,6 +5,6 @@ export class Livro{
     id:string;
     titulo:string;
     data:string;
-    categoria:Categoria;
-    autor:Autor;
+    categoria:number;
+    autor:number;
 }

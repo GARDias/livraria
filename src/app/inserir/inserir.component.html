@@ -10,14 +10,16 @@
     </div>
     <div>
       Selecione o Autor:
-    <select [(ngModel)]="ida" name="ida" class="custom-select custom-select-sm" *ngFor="let autor of autores">
-        <option value="{{autor.id}}">{{autor.nome}}</option>
+    <select required [(ngModel)]="livro.autor" name="autor" class="custom-select custom-select-sm">
+        <option value='null' selected>-Selecione um valor-</option>
+        <option *ngFor="let autor of autores" value="{{autor.id}}">{{autor.nome}}</option>
     </select>
     </div>    
     <div>
       Selecione a Categoria:
-    <select [(ngModel)]="idc" name="idc" class="custom-select custom-select-sm" *ngFor="let categoria of categorias">
-        <option value="{{categoria.id}}">{{categoria.descricao}}</option>
+    <select [(ngModel)]="livro.categoria" name="categoria" class="custom-select custom-select-sm">
+        <option value='null' selected>-Selecione um valor-</option>
+        <option *ngFor="let categoria of categorias" value="{{categoria.id}}">{{categoria.descricao}}</option>
     </select>
     </div>    
 

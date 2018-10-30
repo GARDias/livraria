@@ -1,3 +1,10 @@
-<p>
-  lista works!
-</p>
+<table>
+  <tbody>
+    <tr *ngFor="let livro of livros">
+      <td>{{livro.titulo}}</td>
+      <td>{{livro.data}}</td>
+      <td>{{livro.autor}}</td>
+      <td>{{livro.categoria}}</td>
+    </tr>
+  </tbody>
+</table>>

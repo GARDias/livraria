@@ -27,12 +27,17 @@ export class InserirComponent implements OnInit {
     this.categorias = new Array<Categoria>();
     this.livro = new Livro();
     this.livros = new Array<Livro>();
-    this.service.buscarAutor().subscribe(resp => this.autores = resp);
+    this.service.buscarAutor().subscribe(resp => {
+      this.autores = resp;
+      console.log(this.autores)
+    });
+    console.log(this.autores)
     this.service.buscarCategoria().subscribe(resp => this.categorias = resp);
   }
 
   salvar(){
-    this.service.inserir(this.ida,this.idc,this.livro).subscribe();
+    console.log(this.livro.autor)
+    this.service.inserir(this.livro).subscribe();
   }
 
 }

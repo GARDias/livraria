@@ -1,4 +1,4 @@
 export class Categoria{
-    id:string;
+    id:number;
     descricao : string;
 }

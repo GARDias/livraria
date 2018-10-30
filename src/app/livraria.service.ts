@@ -24,10 +24,14 @@ export class LivrariaService {
     
   }
 
-  inserir(ida : string, idc : string, livro : Livro):Observable<Livro>{
-    
-    let requisicao = 'inserir?ida=' + ida + '&idc='+idc;
+  inserir(livro : Livro):Observable<Livro>{
+    let requisicao = 'inserir';
     return this.http.post<Livro>(this.URL + requisicao, livro);
     
+  }
+
+  buscarTodos():Observable<Livro[]>{
+    let requisicao = 'BuscarTodos';
+    return this.http.get<Livro[]>(this.URL + requisicao);
   }
 }

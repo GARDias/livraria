@@ -1,5 +1,5 @@
 export class Autor{
-    id : string;
+    id : number;
     nome : string;
     psudonimo : string;
 }

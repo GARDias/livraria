@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Livro } from '../Livro';
+import { LivrariaService } from '../livraria.service';
 
 @Component({
   selector: 'app-lista',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lista.component.css']
 })
 export class ListaComponent implements OnInit {
-
-  constructor() { }
+  livro : Livro;
+  livros : Array<Livro>;
+  constructor(private service : LivrariaService) { }
 
   ngOnInit() {
+    this.livro = new Livro();
+    this.livros = new Array<Livro>();
+    this.service.buscarTodos().subscribe(resp => this.livros = resp);
   }
 
 }
